@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 class TodoItem extends StatelessWidget {
+  final bool isChecked;
+  final String todoText;
 
-final bool isChecked;
-final String todoText;
+  final Function(bool?)? onChanged;
 
-final Function(bool?)? onChanged;
-
-  TodoItem({super.key, required this.isChecked, required this.onChanged, required this.todoText});
+  TodoItem({
+    super.key,
+    required this.isChecked,
+    required this.onChanged,
+    required this.todoText,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +25,16 @@ final Function(bool?)? onChanged;
         ),
         child: Row(
           children: [
-      
             Checkbox(value: isChecked, onChanged: onChanged),
-            Text(todoText)
+            Text(todoText,
+            style: TextStyle(
+              decoration: isChecked?
+            TextDecoration.lineThrough:
+            TextDecoration.none,
+            color: Colors.white,
+            fontSize: 18,
+            ),
+            )
           ],
         ),
       ),
