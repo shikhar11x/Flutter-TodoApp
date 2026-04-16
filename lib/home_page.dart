@@ -1,6 +1,5 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
+import 'package:todo_app/utils/dialog_box.dart';
 import 'package:todo_app/utils/todo_item.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -11,6 +10,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final _controller = TextEditingController();
+
   List TodoList = [
     ["Todo", false],
     ["Todo", false],
@@ -26,24 +27,40 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void createNewTask() {
-    showDialog(context: context, builder: (context){
-      return
-    }
-    )
+    showDialog(
+      context: context,
+      builder: (context) {
+        return DialogBox(
+          controller: _controller,
+          onSave: saveNewTask,
+          onCancel: () => Navigator.of(context).pop(),
+        );
+      },
+    );
   }
+
+  void saveNewTask() {
+    setState(() {
+      TodoList.add([_controller.text, false]);
+      _controller.clear();
+      Navigator.of(context).pop();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepPurple[200],
       appBar: AppBar(
-        title: Text("TODO"),
+        title: Text("TODO APP", style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.deepPurple[500],
         elevation: 10,
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: onPressed,
-        child: Icon(Icons.add),
+        onPressed: createNewTask,
+        backgroundColor: Colors.deepPurple[400],
+        child: Icon(Icons.add, color: Colors.white),
       ),
       body: ListView.builder(
         itemCount: TodoList.length,

@@ -26,15 +26,16 @@ class TodoItem extends StatelessWidget {
         child: Row(
           children: [
             Checkbox(value: isChecked, onChanged: onChanged),
-            Text(todoText,
-            style: TextStyle(
-              decoration: isChecked?
-            TextDecoration.lineThrough:
-            TextDecoration.none,
-            color: Colors.white,
-            fontSize: 18,
+            Text(
+              todoText,
+              style: TextStyle(
+                decoration: isChecked
+                    ? TextDecoration.lineThrough
+                    : TextDecoration.none,
+                color: Colors.white,
+                fontSize: 18,
+              ),
             ),
-            )
           ],
         ),
       ),
