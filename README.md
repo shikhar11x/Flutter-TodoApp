@@ -25,12 +25,6 @@ Designed for simplicity, smooth performance, and a premium user experience.
 
 ## 📱 Preview
 
-### 💻 PC View
-![PC Preview](Preview/pc1.png)
-![PC Preview](Preview/pc2.png)
-![PC Preview](Preview/pc3.png)
-
-### 📲 Mobile View
 <p align="center">
   <img src="Preview/img1.jpeg" width="28%" style="border: 2px solid white; border-radius: 12px;" />
   <img src="Preview/img2.jpeg" width="28%" style="border: 2px solid white; border-radius: 12px;" />
