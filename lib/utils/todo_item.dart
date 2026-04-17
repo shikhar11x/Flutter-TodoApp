@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class TodoItem extends StatelessWidget {
   final bool isChecked;
@@ -6,37 +7,59 @@ class TodoItem extends StatelessWidget {
 
   final Function(bool?)? onChanged;
 
+  final Function(BuildContext)? onPressed;
+
   TodoItem({
     super.key,
     required this.isChecked,
     required this.onChanged,
     required this.todoText,
+    required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
-        padding: const EdgeInsets.all(24),
-        decoration: BoxDecoration(
-          color: Colors.deepPurple[500],
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Row(
+      child: Slidable(
+        endActionPane: ActionPane(
+          motion: const StretchMotion(), 
           children: [
-            Checkbox(value: isChecked, onChanged: onChanged),
-            Text(
-              todoText,
-              style: TextStyle(
-                decoration: isChecked
-                    ? TextDecoration.lineThrough
-                    : TextDecoration.none,
-                color: Colors.white,
-                fontSize: 18,
+            SlidableAction(onPressed:onPressed ,
+            icon:Icons.delete,
+            backgroundColor: Colors.red,
+            borderRadius: BorderRadius.circular(12), )
+          ]
+          ),
+        child: Container(
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.05), // glass feel
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: Colors.white.withOpacity(0.08)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.4),
+                blurRadius: 20,
+                spreadRadius: 2,
               ),
-            ),
-          ],
+            ],
+          ),
+          child: Row(
+            children: [
+              Checkbox(value: isChecked, onChanged: onChanged),
+              Text(
+                todoText,
+                style: TextStyle(
+                  decoration: isChecked
+                      ? TextDecoration.lineThrough
+                      : TextDecoration.none,
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
