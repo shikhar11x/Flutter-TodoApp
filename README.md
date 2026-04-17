@@ -26,16 +26,16 @@ Designed for simplicity, smooth performance, and a premium user experience.
 ## 📱 Preview
 
 ### 💻 PC View
-![PC Preview](preview/pc-1.png)
-![PC Preview](preview/pc-2.png)
-![PC Preview](preview/pc-3.png)
+![PC Preview](Preview/pc1.png)
+![PC Preview](Preview/pc2.png)
+![PC Preview](Preview/pc3.png)
 
 ### 📲 Mobile View
-![Mobile Preview](preview/img1.jpeg)
-![Mobile Preview](preview/img2.jpeg)
-![Mobile Preview](preview/img3.jpeg)
-
----
+<p align="center">
+  <img src="Preview/img1.jpeg" width="28%" style="border: 2px solid white; border-radius: 12px;" />
+  <img src="Preview/img2.jpeg" width="28%" style="border: 2px solid white; border-radius: 12px;" />
+  <img src="Preview/img3.jpeg" width="28%" style="border: 2px solid white; border-radius: 12px;" />
+</p>
 
 ## 📦 APK
 
