@@ -31,9 +31,9 @@ Designed for simplicity, smooth performance, and a premium user experience.
 ![PC Preview](preview/pc-3.png)
 
 ### 📲 Mobile View
-![Mobile Preview](preview/img%201.jpeg)
-![Mobile Preview](preview/img%202.jpeg)
-![Mobile Preview](preview/img%203.jpeg)
+![Mobile Preview](preview/img1.jpeg)
+![Mobile Preview](preview/img2.jpeg)
+![Mobile Preview](preview/img3.jpeg)
 
 ---
 
